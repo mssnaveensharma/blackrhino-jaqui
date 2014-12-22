@@ -129,20 +129,61 @@ else
 	 <![endif]-->
 
 	
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
 	<script type="text/javascript">
 		jQuery(document).ready(function(){		
 			jQuery(".moduletable.news_toggle > h3").click(function(){
-				jQuery(".alias-news h3").toggleClass('mark_down')
+				jQuery(".moduletable.news_toggle h3").toggleClass('mark_down')
+
 				jQuery(".wrapper_special").each(function(){	
 
 					jQuery(".wrapper_special").slideToggle();
 				});
 			});
+			jQuery(".moduletable.honeymoon_toggle > h3").click(function(){
+				jQuery(".moduletable.honeymoon_toggle h3").toggleClass('mark_down')
+				jQuery(".wrapper_honeymoon_special").each(function(){	
+
+					jQuery(".wrapper_honeymoon_special").slideToggle();
+				});
+			});
+			jQuery(".moduletable.corporate_toggle > h3").click(function(){
+				jQuery(".moduletable.corporate_toggle h3").toggleClass('mark_down')
+				jQuery(".wrapper_corporate_special").each(function(){	
+
+					jQuery(".wrapper_corporate_special").slideToggle();
+				});
+			});
+			jQuery(".moduletable.archives_2014 > h3").click(function(){
+				jQuery(".moduletable.archives_2014 h3").toggleClass('mark_down')
+				jQuery(".wrapper_2014").each(function(){	
+
+					jQuery(".wrapper_2014").slideToggle();
+				});
+			});
+			jQuery(".moduletable.archives_2015 > h3").click(function(){
+				jQuery(".moduletable.archives_2015 h3").toggleClass('mark_down')
+				jQuery(".wrapper_2015").each(function(){	
+
+					jQuery(".wrapper_2015").slideToggle();
+				});
+			});
 		});
 	</script>
+	<script>
+	 jQuery(function() {
+	  jQuery('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('btn-1b');
+	  jQuery('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('btn');
+	 });
 	
-
+	</script>
+<script src="http://mastersoftwaretechnologies.com/blackrhino/templates/blackrhino/js/jquery.slicknav.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	jQuery('.navigation').slicknav();
+});
+</script>
 </head>
 
 
@@ -191,6 +232,22 @@ else
 		<header>
 				<div class="container_16">
 					 <div class="grid_16">
+					 <script>
+                    jQuery( document ).ready(function() {	
+					  //	alert("fff");					
+					   jQuery('.menu li').on('mouseover', function() {
+						  //alert("ddd");
+							jQuery( ".menu li" ).removeClass('current ');
+							
+						});
+					     jQuery('.menu li').on('mouseout', function() {
+						  //alert("ddd");
+							jQuery( ".menu li.active" ).addClass('current');
+						});
+					 });
+					
+					</script>
+					 
 					 	<?php if ($this->countModules('position-1')) : ?>
 							<nav class="navigation" role="navigation">
 								<jdoc:include type="modules" name="position-1" style="none" />
@@ -274,7 +331,45 @@ else
 		});
 	});
 	</script>
+	<!--<script type="text/javascript">
+					function detectmob() { 
+						 if( navigator.userAgent.match(/Android/i)
+						 || navigator.userAgent.match(/webOS/i)
+						 || navigator.userAgent.match(/iPhone/i)
+						 || navigator.userAgent.match(/iPad/i)
+						 || navigator.userAgent.match(/iPod/i)
+						 || navigator.userAgent.match(/BlackBerry/i)
+						 || navigator.userAgent.match(/Windows Phone/i)
+						 ){
+						    return 1;
+						  }
+						 else {
+						    return 0;
+						  }
+						}
 
+					function check_avail(){
+
+						var ArrDate = document.getElementById("ArrDate").value;
+						var Nts = document.getElementById("Nts").value;
+						var Rooms_0 = document.getElementById("Rooms_0").value;
+						var Adults_0 = document.getElementById("Adults_0").value;
+						var Kids_0 = document.getElementById("Kids_0").value;
+						if(ArrDate == ''){
+							alert("Please fill all fields ");
+							return false;
+						}
+						if(detectmob() == 0){
+						var url = "https://apps.hti-systems.com/extraordinary/blackrhino/desktop.html?locale=en_US#SearchResult:ArrDate="+ ArrDate +",Nts="+ Nts +",RatesStartDate="+ ArrDate +",RatesNts=14,Rooms_0="+ Rooms_0 +",Adults_0="+ Adults_0 +",Kids_0="+ Kids_0 +"";
+						window.location.href = url;
+					}else{
+						var url = "https://apps.hti-systems.com/extraordinary/blackrhino/mobile.html?locale=en_US#SearchResult:ArrDate="+ ArrDate +",Nts="+ Nts +",RatesStartDate="+ ArrDate +",RatesNts=14,Rooms_0="+ Rooms_0 +",Adults_0="+ Adults_0 +",Kids_0="+ Kids_0 +"";
+						window.location.href = url;
+
+					}
+					}
+	</script>
+-->
  		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 		<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 		<script>
